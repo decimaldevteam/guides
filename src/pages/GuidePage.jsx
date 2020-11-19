@@ -90,7 +90,7 @@ class GuidePage extends React.Component{
                 <hr/>
                 <font className="credits">Written by <font id="writter">404</font></font><br/>
                 <font className="muted">Last updated at {this.guide.updated}</font><br/>
-                <a className="edit-btn" href={`https://github.com/decimaldevteam/website/tree/master/public/guides/${this.guide.file}`}>Edit this page <i class="fas fa-edit"></i></a>
+                <a className="edit-btn" href={`https://github.com/decimaldevteam/guides/blob/main/public/guides/${this.guide.file}.md`}>Edit this page <i class="fas fa-edit"></i></a>
                 <div style={{ height: '90px' }}/>
             </div>
 

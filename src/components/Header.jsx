@@ -15,6 +15,7 @@ window.dark = () => {
         setStyle('--sidebar-color', '#303030');
         setStyle('--card-color', '#303030');
         setStyle('--dark-color', 'white');
+        setStyle('--blockquote-color', '#6a737d');
 
         document.querySelector('.header-branding img').src = '/assets/favicon.png';
         
@@ -27,6 +28,7 @@ window.dark = () => {
         setStyle('--sidebar-color', 'white');
         setStyle('--card-color', 'white');
         setStyle('--dark-color', 'black');
+        setStyle('--blockquote-color', '#dadde1');
 
         document.querySelector('.header-branding img').src = '/assets/white-favicon.png';
     }
@@ -40,7 +42,7 @@ export default function(){
                     <img
                         src="/assets/white-favicon.png"
                         draggable="false"
-                        width="70"
+                        width="65"
                     />
                     <font>Decimal Guides</font>
                 </div>

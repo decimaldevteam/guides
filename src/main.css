@@ -7,6 +7,7 @@
     --font-color: black;
     --sidebar-color: #fff;
     --card-color: #fff;
+    --blockquote-color: #dadde1;
 }
 
 *, :after, :before{
@@ -50,8 +51,24 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.card, .coverpage-content h1, .coverpage-content a, .coverpage-content font{
+@keyframes card-slide-up{
+    0%{
+        margin-top: 40px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 10px;
+        opacity: 1;
+    }
+}
+
+.coverpage-content h1, .coverpage-content a, .coverpage-content font{
     animation-name: slide-up;
+    animation-duration: 2s;
+}
+
+.card{
+    animation-name: card-slide-up;
     animation-duration: 2s;
 }
 
@@ -66,15 +83,15 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     right: 0;
     left: 0;
-    padding: .5rem 1rem;
+    padding: .25rem 1rem;
     z-index: 5;
     overflow-y: auto;
     background-color: var(--header-color);
-    box-shadow: 0 0.5px 10px #18181d;
+    box-shadow: 0 .2px 7px #18181d;
 }
 
 .dup-header{
-    height: 5rem;
+    height: 4.5rem;
     width: 100%;
     position: relative;
     top: 0;
@@ -159,6 +176,8 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
     font-family: var(--guide-font);
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .card h3{
@@ -237,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .guide-page pre{
     background-color: #18181d;
-    width: 80%;
+    width: 90%;
     color: #f2f4f7;
     padding: 1rem;
     border-radius: 3px;
@@ -286,14 +305,10 @@ tr:nth-child(2n){
 }
 
 blockquote{
-    border-left: 3px solid grey;
-    margin: 0;
+    transition: 0.4s;
+    border-left: 6px solid var(--blockquote-color);
+    margin: 0 0 1rem;
     padding-left: 10px;
-    transition: 0.3s;
-}
-
-blockquote:hover{
-    border-left: 4px solid var(--link-color);
 }
 
 #nav-btn{
@@ -318,7 +333,7 @@ blockquote:hover{
     z-index: 4;
     transition: 0.3s;
     display: none;
-    border-right: 1px solid grey;
+    border-right: 1px solid  rgba(0, 0, 0, 0.125);
 }
 
 #doc-section{
@@ -328,6 +343,12 @@ blockquote:hover{
     right: 0;
     padding: 40px;
     transition: 0.3s;
+}
+
+#doc-section img{
+    max-width: 90%;
+    margin: 20px 0;
+    border-radius: 3px;
 }
 
 .switch {
@@ -419,6 +440,7 @@ input:checked + .slider:before {
 }
 
 .large-sidebar-link{
+    display: inline-block;
     margin-top: 10px;
 }
 
@@ -525,19 +547,11 @@ input:checked + .slider:before {
 .edit-btn{
     position: relative;
     top: 20px;
-    border: 1px solid var(--dark-color);
-    border-radius: 3px;
-    padding: 9px 16px;
     color: var(--dark-color)!important;
     opacity: 0.9;
-    font-weight: lighter!important;
-    font-family: News Cycle!important;
+    font-weight: bolder!important;
 }
 
-.edit-btn svg{
-    color: rgb(0, 163, 218)!important;
-}
-
-.active{
-    color: var(--link-color);
+.card .muted{
+    font-size: 12px;
 }
