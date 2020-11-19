@@ -65,7 +65,7 @@ You can choose from many filters from [here](https://ffmpeg.org/ffmpeg-filters.h
 > $ ffmpeg -i music.mp3 -af "asetrate=48000*1.3,aresample=48000" nightcore.mp3
 > ```
 
-## Bassboosting a song with normalizer
+## Bassboosting a song
 
 > Ffmpeg provides normalizer like loudnorm and others but I use the `dynaudnorm` to read more about `dynaudnorm` [click here](http://ffmpeg.org/ffmpeg-filters.html#dynaudnorm)
 >
