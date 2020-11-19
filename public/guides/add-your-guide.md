@@ -10,11 +10,11 @@ Login to your github account, then view up the [decimaldevteam/guides](https://g
 
 ## Making your guide
 
-Your guide needs to be written in markdown which gets converted later when user views it! So for that you need to go to [/public/guides/](https://github.com/decimaldevteam/guides/master/public/guides/) where you will find all guides now to create your guide you need to select a name for example lets assume that your guide name is `Some Guide` then your filename should be `some-guide.md` because it will be the path `guides.decimaldev.xyz/#/guide/some-guide` so it will be easy for users!
+Your guide needs to be written in markdown which gets converted later when user views it! So for that you need to go to [/public/guides/](https://github.com/decimaldevteam/guides/tree/main/public/guides) where you will find all guides now to create your guide you need to select a name for example lets assume that your guide name is `Some Guide` then your filename should be `some-guide.md` because it will be the path `guides.decimaldev.xyz/#/guide/some-guide` so it will be easy for users!
 
 ## Configuring your guide
 
-Now you need to configure your guide by adding details of your guide in [/public/api.json](https://github.com/decimaldevteam/guides/master/public/api.json) where you will see something like this
+Now you need to configure your guide by adding details of your guide in [/public/api.json](https://github.com/decimaldevteam/guides/blob/main/public/api.json) where you will see something like this
 
 ```json
 [
