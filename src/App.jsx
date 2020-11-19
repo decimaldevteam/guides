@@ -17,6 +17,8 @@ class App extends React.Component{
         fetch('https://raw.githubusercontent.com/decimaldevteam/guides/main/public/api.json')
         .then(res => res.json())
         .then(data => this.setState({ data }));
+
+        if(!localStorage.getItem('history')) return localStorage.setItem('history', ' ');
     };
 
     render(){
