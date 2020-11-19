@@ -1,6 +1,8 @@
 # Add your guide
 
-Add your guide to our guides website! This will take you some few minutes and the steps are below!
+Add your guide to our guides website! This will take you some few minutes and the steps and conditions are in the next pages!
+
+---
 
 # Steps
 
@@ -53,6 +55,8 @@ Others are edited by the authors!
 ## Doing the pr
 
 After doing your things, make a pull request which will be viewed and merged in few hours!
+
+---
 
 # Conditions
 

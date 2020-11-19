@@ -20,6 +20,8 @@ Finally You should see an output like this:<br/>
 
 **You have installed ffmpeg!**
 
+---
+
 # Basic Functions
 
 In this guide I will show you some of the basic functions of FFmpeg.
@@ -30,14 +32,16 @@ Ffmpeg has lots of utilities , some of them are Image Conversions and Media Conv
 ## Converting Images 
 > Lets suppose I have an `ico` file and want to change it to `png`
 > ```bash
-> ffmpeg -i my_file.ico my_file.png
+> $ ffmpeg -i my_file.ico my_file.png
 > ```
 
 ## Converting Media
 > Lets suppose I have a `mp3` file and want to change it to `wav`
 > ```bash
-> ffmpeg -i my_media.mp3 my_media.wav
+> $ ffmpeg -i my_media.mp3 my_media.wav
 > ```
+
+---
 
 # Audio Effects
 
@@ -72,8 +76,3 @@ You can choose from many filters from [here](https://ffmpeg.org/ffmpeg-filters.h
 > ```bash
 > $ ffmpeg -i music.mp3 -af "bass=g=10,dynaudnorm" bass.mp3
 > ```
-
-# Conclusion
-
-Thats just a part of `Ffmpeg` ! There is still a lot more to discover about it!<br/>
-Thank you for going thorugh this guide! 

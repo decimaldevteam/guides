@@ -21,7 +21,7 @@ class Home extends React.Component{
         const LatestGuides = () => data.slice(0, 4).map(x => <GuideCard guide={x}/>);
         const TopGuides = () => topGuides.map(x => <GuideCard guide={x}/>);
         const RandomGuides = () => data.sort(() => Math.random() - 0.5).slice(0, 4).map(x => <GuideCard guide={x}/>);
-        const RecentlyWatchedGuides = () => data.filter(x => history.includes(x.file)).slice(0, 4).map(x => <GuideCard guide={x}/>);
+        const RecentlyViewedGuides = () => data.filter(x => history.includes(x.file)).slice(0, 4).map(x => <GuideCard guide={x}/>);
         const RecommendedGuides = () => topGuides.filter(x => match(x.tags, history)).slice(0, 4).map(x => <GuideCard guide={x}/>);
 
         return <>
@@ -41,9 +41,9 @@ class Home extends React.Component{
                     <LatestGuides/>
                 </div>
 
-                <h3 className="title">Recently Watched Guides</h3>
+                <h3 className="title">Recently Viewed Guides</h3>
                 <div className="row" style={{ marginTop: '10px' }}>
-                    <RecentlyWatchedGuides/>
+                    <RecentlyViewedGuides/>
                 </div>
 
                 <h3 className="title">Recommended Guides</h3>

@@ -2,6 +2,8 @@
 
 Most of discord.js users does not knows how to make a perfect discord.js command handler and in this guide we will be making a basic command handler with discord.js
 
+---
+
 # Command Handler
 
 ## File structure
@@ -119,7 +121,30 @@ module.exports = {
 };
 ```
 
-# Conclusion
+---
 
-So hereafter do not use a if and else command handler which is bad. You can even make aliases and help command using it :)<br/>
-Try to edit this page and extend this guide :)
+# Auto changing statuses
+
+Make automatically changing statuses for your bot with setInterval...<br/>
+The following code below will make auto changing statuses
+
+```js
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+const statuses = [
+    'status1',
+    'status2',
+    'status3'
+]; // You can make your own array of custom statuses...
+
+client.on('ready', () => {
+    console.log('Bot is ready');
+
+    setInterval(() => {
+        client.user.setActivity(statuses[Math.floor(Math.random() * statuses.length)]); // Set your custom status
+    }, 5000); // 5000ms means 5s, which will changes status for each 5s, you can use custom time
+});
+
+client.login('token');
+```

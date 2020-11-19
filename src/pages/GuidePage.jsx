@@ -21,12 +21,26 @@ const sidebar = _ => {
     };
 };
 
+const makeSidebarLinks = () => {
+    let links = [];
+    document.querySelectorAll('#doc-section h1, #doc-section h2').forEach(x => {
+        links.push(
+            x.tagName === 'H1' ?
+            `<a class="large-sidebar-link" onclick="document.getElementById('${x.innerHTML.toLowerCase().replace(/[|&;$%@"<>()+,\-. ]/g, '')}').scrollIntoView()">${x.innerHTML}</a>` :
+            `<a class="small-sidebar-link" onclick="document.getElementById('${x.innerHTML.toLowerCase().replace(/[|&;$%@"<>()+,\-. ]/g, '')}').scrollIntoView()">${x.innerHTML}</a>`
+        );
+    });
+
+    document.getElementById('sub-sidebar').innerHTML = `<div class="sidebar-links">${links.join('<br/>')}</div>`;
+};
+
 class GuidePage extends React.Component{
 
     constructor(props){
         super(props);
         this.state = { content: 'Loading guide...' };
         this.guide = { updated: '404' };
+        this.content = [];
     };
 
     componentWillMount(){
@@ -34,26 +48,22 @@ class GuidePage extends React.Component{
         if(!guide) return this.setState({ content: '404 - Not Found' });
         this.guide = guide;
 
-        fetch(`https://raw.githubusercontent.com/decimaldevteam/guides/main/public/guides/${guide.file}.md`)
+        fetch(`/guides/${guide.file}.md`)
         .then(res => res.text())
         .then(content => {
-            this.setState({ content });
+            this.content = content.split('---');
+            this.setState({ content: this.content[0] });
+            window.guidepage = this;
+            window.guidecontent = this.content;
 
             window.highlight();
             sidebar();
             window.addEventListener('resize', sidebar);
 
             let links = [];
-            document.querySelectorAll('#doc-section h1, #doc-section h2').forEach(x => {
-                links.push(
-                    x.tagName === 'H1' ?
-                    `<a class="large-sidebar-link" onclick="document.getElementById('${x.innerHTML.toLowerCase().replace(/[|&;$%@"<>()+,\-. ]/g, '')}').scrollIntoView()">${x.innerHTML}</a><br/>` :
-                    `<a class="small-sidebar-link" onclick="document.getElementById('${x.innerHTML.toLowerCase().replace(/[|&;$%@"<>()+,\-. ]/g, '')}').scrollIntoView()">${x.innerHTML}</a><br/>`
-                )
-            });
-            let sidebarLinks = `<div class="sidebar-links">${links.join('')}</div>`;
-
-            document.getElementById('sidebar-link-handler').innerHTML = sidebarLinks;
+            for(let i = 0; i < guide.sidebar.length; i++) links.push(`<a class="large-sidebar-link" onclick="window.guidepage.setState({ content: window.guidecontent[${i}] })">${guide.sidebar[i]}</a>`);
+            document.getElementById('sidebar-link-handler').innerHTML = `<div class="sidebar-links">${links.join('<br/>')}</div>`;
+            makeSidebarLinks();
 
             document.getElementById('writter').innerHTML = guide.contributors
             .map(x => `<a href="http://github.com/${x}">${x}</a>`)
@@ -63,6 +73,11 @@ class GuidePage extends React.Component{
             if(!oldHistory) return localStorage.setItem('history', guide.file);
             localStorage.setItem('history', `${oldHistory},${guide.file}`);
         });
+    };
+
+    componentDidUpdate(){
+        makeSidebarLinks();
+        window.highlight();
     };
 
     componentWillUnmount(){
@@ -79,7 +94,8 @@ class GuidePage extends React.Component{
             <Header/>
             
             <div id="doc-sidebar">
-                <div style={{ marginTop: '50px' }} id="sidebar-link-handler"></div>
+                <div id="sub-sidebar"></div>
+                <div id="sidebar-link-handler"></div>
             </div>
 
             <div className="padding-bottom display-area guide-page" id="doc-section">

@@ -4,7 +4,11 @@ Many people uses code blocks in their site without syntax highlighting which is 
 
 > There are some alternatives for highlightjs, one of them is [Prismjs](https://prismjs.com/).
 
-## Getting started
+---
+
+# Highlighting
+
+## Setting up
 
 So for the sake of this guide, we will be taking this code block which needs to be colored.
 
@@ -15,6 +19,8 @@ So for the sake of this guide, we will be taking this code block which needs to 
     </pre>
 </code>
 ```
+
+## Adding highlightjs
 
 You need to add the highlightjs script tag below to your document head
 
@@ -32,6 +38,8 @@ Then you need to add highlightjs css link tag
 
 > There are variety of highlightjs css for syntax highlighting, you can view up all of them [here](https://highlightjs.org/static/demo/). It will be better to use custom css for syntax highlighting...
 
+## Highlighting
+
 Now you need to use some js here in the script tag
 
 ```html
@@ -41,9 +49,3 @@ Now you need to use some js here in the script tag
     });
 </script>
 ```
-
-# Conclusion
-
-This will be useful for users who visits your website and the code can be understandable for them.
-
-Happy Highlighting :)

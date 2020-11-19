@@ -322,18 +322,32 @@ blockquote{
 
 #doc-sidebar{
     position: fixed;
-    top: 40px;
+    top: 30px;
     left: 0;
     bottom: 0;
     width: 270px;
     height: 100%;
-    padding-left: 40px;
     overflow: auto;
     background: var(--sidebar-color);
     z-index: 4;
     transition: 0.3s;
     display: none;
     border-right: 1px solid  rgba(0, 0, 0, 0.125);
+}
+
+#sidebar-link-handler{
+    padding-left: 40px;
+}
+
+#sub-sidebar{
+    background: var(--sidebar-color);
+    border-bottom: 1px solid  rgba(0, 0, 0, 0.125);
+    position: relative;
+    left: 0;
+    right: 0;
+    padding-left: 40px;
+    padding-bottom: 30px;
+    margin-top: 60px;
 }
 
 #doc-section{
@@ -431,21 +445,21 @@ input:checked + .slider:before {
 }
 
 .sidebar-links{
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 .small-sidebar-link{
-    padding-left: 20px;
+    margin-left: 20px;
     font-weight: lighter!important;
+}
+
+.small-sidebar-link:hover{
+    color: var(--link-color);
 }
 
 .large-sidebar-link{
     display: inline-block;
     margin-top: 10px;
-}
-
-.small-sidebar-link:hover{
-    color: var(--link-color);
 }
 
 .footer-info-text{

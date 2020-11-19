@@ -1,9 +1,21 @@
 # Spotify-api.js
 
+## Basic
+
 Spotify-api.js is a promise based quick wrapper for spotify web api which covers the all the api endpoints!<br/>
 If you do not know about this package and much then we will suggest you to check out its [Npm Page](https://npmjs.com/package/spotify-api.js), [GitHub](https://github.com/spotify-api/spotify-api.js) and [Documentation](https://spotify-api.js.org)
 
 > The problem here comes is spotify api resets its token every 5 minutes. The problem here comes is spotify api resets its token every 5 minutes.<br/>And thats what spotify-api.js package helps to. It helps to connect with the api with less codes!
+
+## Installation
+
+You can install spotify-api.js through npm!
+
+```bash
+$ npm i spotify-api.js
+```
+
+---
 
 # Getting Started
 
@@ -17,17 +29,11 @@ spotify.version
 
 ## Types of tokens
 
-Before enetering to the spotify-api.js part, lets be clear with types of token. There are 2 types of bearer token. The first one is the api token and the second one user token(scoped token);
-
-| Content    | Api Token        | User Token              |
-|------------|------------------|-------------------------|
-| Search, get, fetch playlists, track, etc | yes     | yes     |
-| Fetch current user information | no   | based on scopes  |
-| Access to player  | no     | based on scopes  |
+Before enetering to the spotify-api.js part, lets be clear with types of token. There are 2 types of bearer token. The first one is the api token and the second one user token(scoped token)
 
 ## Api Client
 
-If you have read the above table, then you can know that the api client can only access the search data of spotify which is useful for analysis of data. You can access the api client through [Client](https://spotify-api.js.org/#/docs/class/Client).<br/>
+Api client can only access the search data of spotify which is useful for analysis of data. You can access the api client through [Client](https://spotify-api.js.org/#/docs/class/Client).<br/>
 First of all you need to make a spotify developer app [here](https://developer.spotify.com/dashboard/) then get your client secret and client id.
 
 You can use the following code to get your api access token
@@ -50,8 +56,3 @@ User client can access the current user information and can be used for personal
 The Spotify-api.js community has made a guide to authorize with scoped token in their documentation site itself, you can read it from [here](https://spotify-api.js.org/#/docs/guide/spotify-auth)
 
 > Some features like [UserClient.player](https://spotify-api.js.org/#/docs/class/UserClient?scrollTo=UserClient,player) is only available for spotify premium users only!
-
-# Conclusion
-
-This guide ends here where you understand the basics of the spotify-api.js package. In the next part of the guide we will be discussing some tricks of spotify-api.js<br/>
-Thanks for viewing this guide, you can try to edit this page and extend this guide :)

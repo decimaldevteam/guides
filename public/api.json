@@ -13,6 +13,11 @@
         ],
         "contributors": [
             "abh80"
+        ],
+        "sidebar": [
+            "Installation",
+            "Basic Functions",
+            "Audio Effects"
         ]
     },
     {
@@ -28,6 +33,11 @@
         ],
         "contributors": [
             "Scientific-Guy"
+        ],
+        "sidebar": [
+            "Introduction",
+            "Steps",
+            "Conditions"
         ]
     },
     {
@@ -43,6 +53,10 @@
         ],
         "contributors": [
             "Scientific-Guy"
+        ],
+        "sidebar": [
+            "Introduction",
+            "Highlighting"
         ]
     },
     {
@@ -61,6 +75,11 @@
         "contributors": [
             "Scientific-Guy",
             "abh80"
+        ],
+        "sidebar": [
+            "Introduction",
+            "Command Handler",
+            "Auto Changing Status"
         ]
     },
     {
@@ -78,6 +97,10 @@
         ],
         "contributors": [
             "Scientific-Guy"
+        ],
+        "sidebar": [
+            "Installation",
+            "Getting Started"
         ]
     }
 ]
