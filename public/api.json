@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Add your guide",
+        "description": "Add your guide to our site!",
+        "thumbnail": "/assets/large-logo.png",
+        "file": "add-your-guide",
+        "updated": "19/11/2020 10:56 PM IST",
+        "top": true,
+        "tags": [
+            "decimal",
+            "official"
+        ],
+        "contributors": [
+            "Scientific-Guy"
+        ]
+    },
+    {
+        "name": "Highlight.js",
+        "description": "Highlight code syntax of your site",
+        "thumbnail": "https://avatars0.githubusercontent.com/u/9039821?s=280&v=4",
+        "file": "highlightjs-basic",
+        "updated": "18/11/2020 7:01 PM IST",
+        "tags": [
+            "javascript",
+            "js",
+            "web"
+        ],
+        "contributors": [
+            "Scientific-Guy"
+        ]
+    },
+    {
+        "name": "Discord.js",
+        "description": "A whole set of discord.js guide!",
+        "thumbnail": "https://discord.js.org/static/logo-square.png",
+        "file": "discordjs",
+        "updated": "18/11/2020 6:05 PM IST",
+        "top": true,
+        "tags": [
+            "api",
+            "js",
+            "javascript",
+            "discord"
+        ],
+        "contributors": [
+            "Scientific-Guy",
+            "abh80"
+        ]
+    },
+    {
+        "name": "Spotify Api JS",
+        "description": "Very basic look up to the spotify-api.js library",
+        "thumbnail": "https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png",
+        "file": "spotify-api-js",
+        "updated": "18/11/2020 3:10 PM IST",
+        "top": true,
+        "tags": [
+            "api",
+            "js",
+            "javascript",
+            "spotify"
+        ],
+        "contributors": [
+            "Scientific-Guy"
+        ]
+    }
+]
