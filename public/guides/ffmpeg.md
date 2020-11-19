@@ -16,7 +16,7 @@ $ ffmpeg -version
 ```
 
 Finally You should see an output like this:
-[Outpu](https://blogs.starstracker.xyz/img/ffmpeg-guide/verify.png)
+![Output](https://blogs.starstracker.xyz/img/ffmpeg-guide/verify.png)
 
 **You have installed ffmpeg!**
 
