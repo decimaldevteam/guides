@@ -15,7 +15,7 @@ To verify ffmpeg is installed open `powershell` or `command prompt` or any other
 $ ffmpeg -version
 ```
 
-Finally You should see an output like this:
+Finally You should see an output like this:<br/>
 ![Output](https://blogs.starstracker.xyz/img/ffmpeg-guide/verify.png)
 
 **You have installed ffmpeg!**
