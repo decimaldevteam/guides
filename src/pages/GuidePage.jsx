@@ -34,7 +34,7 @@ class GuidePage extends React.Component{
         if(!guide) return this.setState({ content: '404 - Not Found' });
         this.guide = guide;
 
-        fetch(`/guides/${guide.file}.md`)
+        fetch(`https://raw.githubusercontent.com/decimaldevteam/guides/main/public/guides/${guide.file}.md`)
         .then(res => res.text())
         .then(content => {
             this.setState({ content });
