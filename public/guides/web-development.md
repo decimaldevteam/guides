@@ -1,12 +1,15 @@
+# Web Development
+
+Welcome, this is a mixed guide of how to on web development! In this guide, we will be having pages related to web js, css and html!<br/>
+Start this guide from the next page!
+
+---
+
 # Highlight.js
 
 Many people uses code blocks in their site without syntax highlighting which is not good for viewers to understand the codes and will not be neat to look over up. So we use [highlight.js](https://highlightjs.org/), even this website code blocks are colored with the same highlightjs.
 
 > There are some alternatives for highlightjs, one of them is [Prismjs](https://prismjs.com/).
-
----
-
-# Highlighting
 
 ## Setting up
 
