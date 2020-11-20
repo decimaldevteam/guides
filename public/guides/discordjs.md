@@ -2,33 +2,39 @@
 
 Most of discord.js users does not knows how to make a perfect discord.js command handler and in this guide we will be making a basic command handler with discord.js
 
+## Installation
+
+Asusual you need to have installed nodejs and npm to install npm packages!
+
+```bash
+$ npm i discord.js
+```
+
 ---
 
-# Command Handler
+# Login to your bot
 
-## File structure
+## Setting up
 
-So for this, we will be using this file structure
-
-```
-|- node_modules/
-|- index.js
-|- package.json
-|- package-lock.json
-|- commands/
-   |- ping.js
-```
-
-## Setting up the bot
-
-FIrst you must have installed nodejs and then need to setup package.json and install discordjs
+Now lets login to your discord bot first you need to setup package.json and make sure you have installed discord.js!
 
 ```bash
 $ npm init -y
 $ npm install discord.js
 ```
 
-## Beginner code
+## File structure
+
+So for this guide your file structure should be
+
+```
+|- node_modules/
+|- index.js
+|- package.json
+|- package-lock.json
+```
+
+## Index.js
 
 The beginner code of discord.js
 
@@ -41,6 +47,43 @@ client.on('ready', () => {
 });
 
 client.login('token');
+```
+
+**Hurrah! We have a running bot!**
+
+> Keep your bot token secret always, try to save it in .env file!
+
+## Test command
+
+So, lets test our bot now by a simple pong command!
+
+```js
+client.on('message', message => {
+   if(message.content == '!ping') return message.channel.send('pong');
+});
+```
+
+Now go to a discord channel where the bot has permission and exists and send the `!ping` message and you see the bot running!
+
+> The above code uses if and else type of command handler which is not good so you can read how to make a command handler in the next page!
+
+---
+
+# Command Handler
+
+So if you dont know how to start a discord bot then read the previous page!
+
+## File structure
+
+So for this guide, we will be using this file structure will be this
+
+```
+|- node_modules/
+|- index.js
+|- package.json
+|- package-lock.json
+|- commands/
+   |- ping.js
 ```
 
 ## Do not
