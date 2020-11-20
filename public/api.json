@@ -88,9 +88,10 @@
     {	
         "name": "Web Development",	
         "description": "Guide for web development!",	
-        "thumbnail": "https://www.pngitem.com/pimgs/m/519-5191896_pofolio-website-html-css-javascript-logo-png-transparent.png",	
+        "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png",	
         "file": "web-development",	
         "updated": "20/11/2020 6:00 PM IST",	
+        "top": true,
         "tags": [	
             "javascript",	
             "js",	
@@ -104,7 +105,7 @@
         ],	
         "sidebar": [	
             "Introduction",	
-            "Highlighting"	
+            "Highlight.js"	
         ]	
     },
     {
