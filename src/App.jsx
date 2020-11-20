@@ -14,7 +14,7 @@ class App extends React.Component{
     };
 
     componentWillMount(){
-        fetch('/api.json')
+        fetch('https://raw.githubusercontent.com/decimaldevteam/guides/main/public/api.json')
         .then(res => res.json())
         .then(data => this.setState({ data }));
 

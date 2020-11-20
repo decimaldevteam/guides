@@ -9,7 +9,7 @@ import Markdown from 'react-showdown';
 let sidebarOpen = true;
 if(innerWidth > 700) sidebarOpen = false;
 
-const sidebar = _ => {
+const sidebar = () => {
     if(!sidebarOpen){
         sidebarOpen = true;
         document.getElementById('doc-section').style.width = (innerWidth - 250) + 'px';
@@ -33,7 +33,6 @@ const makeSidebarLinks = () => {
 
     document.getElementById('sub-sidebar').innerHTML = `<div class="sidebar-links">${links.join('<br/>')}</div>`;
 };
-
 class GuidePage extends React.Component{
 
     constructor(props){
@@ -44,15 +43,18 @@ class GuidePage extends React.Component{
     };
 
     componentWillMount(){
+        let queries = new URLSearchParams(location.hash.split('?')[1]);
+        let page = queries.get('page');
         let guide = this.props.data.find(x => x.file === this.props.guide);
         if(!guide) return this.setState({ content: '404 - Not Found' });
         this.guide = guide;
 
-        fetch(`/guides/${guide.file}.md`)
+        fetch(`https://raw.githubusercontent.com/decimaldevteam/guides/main/public/guides/${guide.file}.md`)
         .then(res => res.text())
         .then(content => {
             this.content = content.split('---');
-            this.setState({ content: this.content[0] });
+            let i = page ? parseInt(page) : 0;
+            this.setState({ content: this.content[i] });
             window.guidepage = this;
             window.guidecontent = this.content;
 
@@ -61,10 +63,13 @@ class GuidePage extends React.Component{
             window.addEventListener('resize', sidebar);
 
             let links = [];
-            for(let i = 0; i < guide.sidebar.length; i++) links.push(`<a class="large-sidebar-link" onclick="window.guidepage.setState({ content: window.guidecontent[${i}] })">${guide.sidebar[i]}</a>`);
-            document.getElementById('sidebar-link-handler').innerHTML = `<div class="sidebar-links">${links.join('<br/>')}</div>`;
-            makeSidebarLinks();
-
+            let paginator = [];
+            for(let i = 0; i < guide.sidebar.length; i++) {
+                links.push(`<a class="large-sidebar-link" onclick="window.guidepage.setState({ content: window.guidecontent[${i}] })">${guide.sidebar[i]}</a>`);
+                paginator.push(`<a class="paginator-link" onclick="window.guidepage.setState({ content: window.guidecontent[${i}] })">${i+1}</a>`);
+            };
+            document.getElementById('sidebar-link-handler').innerHTML = `<div class="sidebar-links"><h2>Pages</h2><br/>${links.join('<br/>')}</div>`;
+            document.getElementById('paginator').innerHTML = paginator.join('\n');
             document.getElementById('writter').innerHTML = guide.contributors
             .map(x => `<a href="http://github.com/${x}">${x}</a>`)
             .join(', ')
@@ -103,10 +108,11 @@ class GuidePage extends React.Component{
                     markdown={this.state.content}
                     options={{ tables: true }}
                 />
+                <div id="paginator"/>
                 <hr/>
                 <font className="credits">Written by <font id="writter">404</font></font><br/>
                 <font className="muted">Last updated at {this.guide.updated}</font><br/>
-                <a className="edit-btn" href={`https://github.com/decimaldevteam/guides/blob/main/public/guides/${this.guide.file}.md`}>Edit this page <i class="fas fa-edit"></i></a>
+                <a className="edit-btn" href={`https://github.com/decimaldevteam/guides/blob/main/public/guides/${this.guide.file}.md`}>Edit this guide <i class="fas fa-edit"></i></a>
                 <div style={{ height: '90px' }}/>
             </div>
 

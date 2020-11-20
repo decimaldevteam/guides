@@ -8,6 +8,7 @@
     --sidebar-color: #fff;
     --card-color: #fff;
     --blockquote-color: #dadde1;
+    --paginator-link-color: #dadde1;
 }
 
 *, :after, :before{
@@ -448,6 +449,14 @@ input:checked + .slider:before {
     margin-top: 20px;
 }
 
+.sidebar-links h2{
+    margin: 0;
+    margin-bottom: -20px;
+    padding-bottom: 0;
+    font-family: var(--guide-font);
+    font-weight: bolder;
+}
+
 .small-sidebar-link{
     margin-left: 20px;
     font-weight: lighter!important;
@@ -568,4 +577,23 @@ input:checked + .slider:before {
 
 .card .muted{
     font-size: 12px;
+}
+
+.paginator-link{
+    margin-left: 5px;
+    background-color: var(--paginator-link-color);
+    padding: 8px 12px;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.paginator-link:hover{
+    background-color: var(--link-color);
+    color: var(--paginator-link-color);
+}
+
+#paginator{
+    margin-top: 30px;
+    padding-bottom: 20px;
 }

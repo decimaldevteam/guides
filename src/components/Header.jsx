@@ -16,6 +16,7 @@ window.dark = () => {
         setStyle('--card-color', '#303030');
         setStyle('--dark-color', 'white');
         setStyle('--blockquote-color', '#6a737d');
+        setStyle('--paginator-link-color', '#16161d');
 
         document.querySelector('.header-branding img').src = '/assets/favicon.png';
         
@@ -29,6 +30,7 @@ window.dark = () => {
         setStyle('--card-color', 'white');
         setStyle('--dark-color', 'black');
         setStyle('--blockquote-color', '#dadde1');
+        setStyle('--paginator-link-color', '#dadde1');
 
         document.querySelector('.header-branding img').src = '/assets/white-favicon.png';
     }
