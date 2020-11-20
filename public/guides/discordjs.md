@@ -1,6 +1,6 @@
 # Discord.js
 
-Most of discord.js users does not knows how to make a perfect discord.js command handler and in this guide we will be making a basic command handler with discord.js
+A guide for howto of discord.js pages, you can edit this guide by clicking the below button and add more pages!
 
 ## Installation
 
