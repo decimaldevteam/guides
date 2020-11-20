@@ -251,7 +251,7 @@ if(message.author.id != 'your-id') return message.channel.send('Only for trusted
 If many
 
 ```js
-const trustedMembers = ['id1', id2', 'id3'];
+const trustedMembers = ['id1', 'id2', 'id3'];
 if(trustedMembers.includes(message.author.id)) return message.channel.send('Only for trusted members')!
 ```
 
