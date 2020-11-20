@@ -6,8 +6,10 @@ A NodeJS wrapper for interfacing with Discord.
 You need to have installed nodejs and npm to install npm packages then create package.json by useing `npm init` for faster you can use `npm init -y` first.
 
 ```bash
-npm install --no-optional eris
+$ npm install --no-optional eris
 ```
+
+---
 
 # Setup
 
@@ -43,14 +45,20 @@ client.on("messageCreate", (msg) => {
 client.connect();
 ```
 
-then start a bot by `node index.js`.
-after you start the bot you need to test ping cmd by type `!ping` in your discord server.
+And run the index.js
 
-if it work let go to next step
+```bash
+$ node index.js
+```
+
+After you start the bot you need to test ping cmd by type `!ping` in your discord server. You will see the bot responding 'Pong'
+
+> We will see how to make a command handler in the next guide!
 
 ---
 
 # Command Handler
+
 So if you dont know how to start a discord bot then read the previous page.
 
 ## File structure
@@ -67,7 +75,11 @@ So for this guide your file structure should be
         | - ping.js
 ```
 
-now let install fs by `npm install fs`
+So now lets install fs module through npm
+
+```bash
+$ npm install fs
+```
 
 Then in your index.js file
 
@@ -105,7 +117,7 @@ fs.readdir(`${__dirname}/commands`, (error, ctg) => {
 
 ```
 
-for message event
+For message event
 
 ```js
 client.on("messageCreate", async (message) => {
@@ -127,7 +139,8 @@ client.on("messageCreate", async (message) => {
 });
 ```
 
-after this in your index.js file should be
+After this in your index.js file should be
+
 ```js
 const fs = require('fs');
 const Discord = require('discord.js');
@@ -180,9 +193,10 @@ client.on("messageCreate", async (message) => {
 client.connect();
 ```
 
-then create folder name commands and category name it anything you want for this guild i will name it to general and create `ping.js` in your category folder for my i have create `ping.js` in general
+Then create folder name commands and category name it anything you want for this guide, i will name it to general and create `ping.js` in the folder
 
 ## Ping.js
+
 ```js
 module.exports.run = async (client, message, args) => {
     const msgCreated = message.createdTimestamp;
@@ -200,6 +214,12 @@ module.exports.help = {
 };
 ```
 
-then test it by use `node index.js`
+Then run the index.js
 
-if it work let go to next page (i will update it soon)
+```bash
+$ node index.js
+```
+
+And you see your command handler working fine!
+
+> This guide will be updated in upcomming time!
