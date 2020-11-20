@@ -9,6 +9,8 @@ You need to have installed nodejs and npm to install npm packages then create pa
 npm install --no-optional eris
 ```
 
+---
+
 # Setup
 
 After you install eris you need to create file name index.js.
