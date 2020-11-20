@@ -16,7 +16,7 @@ Your guide needs to be written in markdown which gets converted later when user 
 
 ## Paging your guide
 
-You can make paging to your guide by adding `\-\-\-` which is `<hr>` in html so if you want to add html then use `<hr>`, if you use `\-\-\-` means the content after that line is next page!
+You can make paging to your guide by adding **-****-****-** which is `<hr>` in html so if you want to add html then use `<hr>`, if you use **-****-****-** means the content after that line is next page!
 
 ## Configuring your guide
 
