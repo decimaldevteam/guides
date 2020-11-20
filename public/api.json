@@ -1,5 +1,27 @@
 [
     {
+        "name": "Eris",
+        "description": "A basic eris guide.",
+        "thumbnail": "https://cdn.discordapp.com/avatars/517160857193676803/18beaf570bf0eac3cbc61b475193936c.png",
+        "file": "eris",
+        "updated": "20/11/2020 5:36 PM IST",
+        "top": true,
+        "tags": [
+            "js",
+            "javascript",
+            "discord",
+            "eris"
+        ],
+        "contributors": [
+            "1GPEX"
+        ],
+        "sidebar": [
+            "Introduction",
+            "Setup",
+            "Command Handler"
+        ]
+    },
+    {
         "name": "Ffmpeg",
         "description": "Basic ffmpeg guide",
         "thumbnail": "https://avatars0.githubusercontent.com/u/729418?s=400&v=4",
@@ -102,28 +124,6 @@
         "sidebar": [
             "Installation",
             "Getting Started"
-        ]
-    },
-    {
-        "name": "Eris",
-        "description": "A basic eris guide.",
-        "thumbnail": "https://cdn.discordapp.com/avatars/517160857193676803/18beaf570bf0eac3cbc61b475193936c.png",
-        "file": "eris",
-        "updated": "20/11/2020 5:36 PM IST",
-        "top": true,
-        "tags": [
-            "js",
-            "javascript",
-            "discord",
-            "eris"
-        ],
-        "contributors": [
-            "1GPEX"
-        ],
-        "sidebar": [
-            "Introduction",
-            "Setup",
-            "Command Handler"
         ]
     }
 ]
