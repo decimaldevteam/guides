@@ -78,6 +78,7 @@
         ],
         "sidebar": [
             "Introduction",
+            "Login to your bot",
             "Command Handler",
             "Auto Changing Status"
         ]
