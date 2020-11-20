@@ -82,7 +82,8 @@
             "Introduction",
             "Login to your bot",
             "Command Handler",
-            "Auto Changing Status"
+            "Auto Changing Status",
+            "Eval Command"
         ]
     },
     {	
