@@ -40,7 +40,7 @@ client.on("ready", () => {
 });
 client.on("messageCreate", (msg) => {
     if(msg.content === "!ping") {
-        bot.createMessage(msg.channel.id, "Pong!");
+        client.createMessage(msg.channel.id, "Pong!");
     }
 });
 client.connect();
@@ -112,6 +112,7 @@ fs.readdir(`${__dirname}/commands`, (error, ctg) => {
                 if (cmd.help.aliases && Array.isArray(cmd.help.aliases)) cmd.help.aliases.forEach(alias => client.aliases.set(alias, cmd.help.name));
             });
         });
+        
     });
 });
 
@@ -223,4 +224,4 @@ $ node index.js
 
 And you see your command handler working fine!
 
-> This guide will be updated in upcomming time!
+> This guide will be updated in upcomming time!<br/>Incase if you note some mistakes in the guide then kindly edit this guide!
