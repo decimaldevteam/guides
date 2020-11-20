@@ -14,6 +14,10 @@ Login to your github account, then view up the [decimaldevteam/guides](https://g
 
 Your guide needs to be written in markdown which gets converted later when user views it! So for that you need to go to [/public/guides/](https://github.com/decimaldevteam/guides/tree/main/public/guides) where you will find all guides now to create your guide you need to select a name for example lets assume that your guide name is `Some Guide` then your filename should be `some-guide.md` because it will be the path `guides.decimaldev.xyz/#/guide/some-guide` so it will be easy for users!
 
+## Paging your guide
+
+You can make paging to your guide by adding `---` which is `<hr>` in html so if you want to add html then use `<hr>`, if you use `---` means the content after that line is next page!
+
 ## Configuring your guide
 
 Now you need to configure your guide by adding details of your guide in [/public/api.json](https://github.com/decimaldevteam/guides/blob/main/public/api.json) where you will see something like this
@@ -33,7 +37,8 @@ Now you need to configure your guide by adding details of your guide in [/public
         ],
         "contributors": [
             "Scientific-Guy"
-        ]
+        ],
+        "sidebar": [...]
     },
     {
         ...
@@ -49,6 +54,7 @@ This is the place where all details exists, you need to create a json object wit
 - **contributors** - Array of github users
 - **tags** - This will decide to what to display in recommended guides
 - **file** - File name you selected like `some-guide.md` so just add `some-guide`!
+- **sidebar** - Sidebar will be the array of the contents displayed in the main sidebar same to the index divided in the page!
 
 Others are edited by the authors!
 
