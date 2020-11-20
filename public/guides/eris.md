@@ -6,6 +6,7 @@ A NodeJS wrapper for interfacing with Discord.
 You need to have installed nodejs and npm to install npm packages then create package.json by useing `npm init` for faster you can use `npm init -y` first.
 
 ```bash
+$ npm init -y
 $ npm install --no-optional eris
 ```
 
