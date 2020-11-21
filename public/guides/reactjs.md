@@ -16,7 +16,7 @@ You can use react directly in html by adding script tags to head
 Or making the react website in jsx and then making production build! For that you must have installed nodejs!
 
 ```bash
-$ npx created-react-app .
+$ npx create-react-app .
 ```
 
 > If you are thinking what is `npx create-react-app .`, that will just setup the directory for react jsx development! And we will be using `create-react-app` template for this whole guide, you can still setup your own project environment. And if you are using raw react, then its a bad idea!
