@@ -11,3 +11,8 @@ window.highlight = () => {
         x.innerHTML = x.innerHTML.replace(/\$/g, '<font style="opacity: 0.7">$</font>');
     });
 };
+
+window.saveGuide = x => {
+    localStorage.setItem('saved', `${localStorage.getItem('saved')},${x}`);
+    document.getElementById('vl-btn').innerHTML = 'Added to viewlist!';
+};

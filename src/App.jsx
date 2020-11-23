@@ -19,6 +19,7 @@ class App extends React.Component{
         .then(data => this.setState({ data }));
 
         if(!localStorage.getItem('history')) return localStorage.setItem('history', ' ');
+        if(!localStorage.getItem('saved')) return localStorage.setItem('saved', ' ');
     };
 
     render(){

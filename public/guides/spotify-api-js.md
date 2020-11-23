@@ -50,17 +50,9 @@ const token = await Auth.get({
 console.log(token); // Spotify resets its token each every 1 to 5 minutes to prevent api spam...
 ```
 
-> **Trick:**
-> 
-> You can always switch your client token by [Client.login](https://spotify-api.js.org/#/docs/class/Client?scrollTo=login)
-> ```js
-> client.login('token'); // The client get refresh by a new token
-> ```
-
 ## Current User Client
 
 User client can access the current user information and can be used for personalization. You can access this client directly through [Client.user](https://spotify-api.js.org/#/docs/class/Client?scrollTo=user) or [UserClient](https://spotify-api.js.org/#/docs/class/UserClient)<br/>
-The Spotify-api.js community has made a guide to authorize with scoped token in their documentation site itself, you can read it from [here](https://spotify-api.js.org/#/docs/guide/spotify-auth)<br/>
-You can use the same login trick above by using **UserClient.login** or **Client.user.login**!
+The Spotify-api.js community has made a guide to authorize with scoped token in their documentation site itself, you can read it from [here](https://spotify-api.js.org/#/docs/guide/spotify-auth)
 
-> Some features like [UserClient.player](https://spotify-api.js.org/#/docs/class/UserClient?scrollTo=UserClient.player) is only available for spotify premium users only!
+> Some features like [UserClient.player](https://spotify-api.js.org/#/docs/class/UserClient?scrollTo=UserClient,player) is only available for spotify premium users only!

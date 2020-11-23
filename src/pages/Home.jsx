@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Header from '../components/Header';
 import GuideCard from '../components/GuideCard';
@@ -16,6 +17,7 @@ class Home extends React.Component{
     render(){
         let data = this.props.data;
         let history = localStorage.getItem('history');
+        let saved = localStorage.getItem('saved');
         let topGuides = data.filter(x => x.top);
 
         const LatestGuides = () => data.slice(0, 4).map(x => <GuideCard guide={x}/>);
@@ -23,6 +25,7 @@ class Home extends React.Component{
         const RandomGuides = () => data.sort(() => Math.random() - 0.5).slice(0, 4).map(x => <GuideCard guide={x}/>);
         const RecentlyViewedGuides = () => data.filter(x => history.includes(x.file)).slice(0, 4).map(x => <GuideCard guide={x}/>);
         const RecommendedGuides = () => topGuides.filter(x => match(x.tags, history)).slice(0, 4).map(x => <GuideCard guide={x}/>);
+        const ViewList = data.filter(x => saved.includes(x.file)).map(x => <GuideCard guide={x}/>);
 
         return <>
             <Header/>
@@ -36,6 +39,21 @@ class Home extends React.Component{
             </div>
 
             <div className="display-area">
+                {
+                    ViewList.length ?
+                    <>
+                        <h3 className="title">ViewList</h3>
+                        <a onClick={() => {
+                            localStorage.setItem('saved', ' ');
+                            this.setState({});
+                        }} style={{ cursor: 'pointer' }}>Clear viewlist?</a>
+                        <div className="row" style={{ marginTop: '10px' }}>
+                             {ViewList}
+                        </div>
+                    </> :
+                    ''
+                }
+
                 <h3 className="title">Latest Guides</h3>
                 <div className="row" style={{ marginTop: '10px' }}>
                     <LatestGuides/>

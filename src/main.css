@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #f2f4f7;
     padding: 1rem;
     border-radius: 3px;
-    white-space: pre-wrap;
+    overflow-y: auto;
 }
 
 .guide-page{
@@ -596,4 +596,9 @@ input:checked + .slider:before {
 #paginator{
     margin-top: 30px;
     padding-bottom: 20px;
+}
+
+#vl-btn{
+    font-weight: lighter;
+    font-size: 14px;
 }

@@ -1,0 +1,8 @@
+<html>
+    <head>
+        <script>
+            const code = (new URLSearchParams(location.search)).get('code');
+            location.href = `/#/login?code=${code}`
+        </script>
+    </head>
+</html>
