@@ -1,4 +1,48 @@
+  
 [
+    {
+        "name": "React",
+        "description": "A guide for howto of reactjs which is a frontend js web framework!",
+        "thumbnail": "https://miro.medium.com/max/500/1*cPh7ujRIfcHAy4kW2ADGOw.png",
+        "file": "reactjs",
+        "top": true,
+        "updated": "21/11/2020 7:53 PM IST",
+        "tags": [
+            "jsx",
+            "react",
+            "web",
+            "javascript",
+            "js"
+        ],
+        "contributors": [
+            "Scientific-Guy"
+        ],
+        "sidebar": [
+            "Introduction",
+            "Loading page"
+        ]
+    },
+    {
+        "name": "Eris",
+        "description": "A basic eris guide.",
+        "thumbnail": "https://cdn.discordapp.com/avatars/517160857193676803/18beaf570bf0eac3cbc61b475193936c.png",
+        "file": "eris",
+        "updated": "20/11/2020 5:36 PM IST",
+        "tags": [
+            "js",
+            "javascript",
+            "discord",
+            "eris"
+        ],
+        "contributors": [
+            "1GPEX"
+        ],
+        "sidebar": [
+            "Introduction",
+            "Setup",
+            "Command Handler"
+        ]
+    },
     {
         "name": "Ffmpeg",
         "description": "Basic ffmpeg guide",
@@ -41,25 +85,6 @@
         ]
     },
     {
-        "name": "Highlight.js",
-        "description": "Highlight code syntax of your site",
-        "thumbnail": "https://avatars0.githubusercontent.com/u/9039821?s=280&v=4",
-        "file": "highlightjs-basic",
-        "updated": "18/11/2020 7:01 PM IST",
-        "tags": [
-            "javascript",
-            "js",
-            "web"
-        ],
-        "contributors": [
-            "Scientific-Guy"
-        ],
-        "sidebar": [
-            "Introduction",
-            "Highlighting"
-        ]
-    },
-    {
         "name": "Discord.js",
         "description": "A whole set of discord.js guide!",
         "thumbnail": "https://discord.js.org/static/logo-square.png",
@@ -78,9 +103,34 @@
         ],
         "sidebar": [
             "Introduction",
+            "Login to your bot",
             "Command Handler",
-            "Auto Changing Status"
+            "Auto Changing Status",
+            "Eval Command"
         ]
+    },
+    {	
+        "name": "Web Development",	
+        "description": "Guide for web development!",	
+        "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png",	
+        "file": "web-development",	
+        "updated": "20/11/2020 6:00 PM IST",	
+        "top": true,
+        "tags": [	
+            "javascript",	
+            "js",	
+            "web",
+            "css",
+            "react",
+            "jsx"
+        ],	
+        "contributors": [	
+            "Scientific-Guy"	
+        ],	
+        "sidebar": [	
+            "Introduction",	
+            "Highlight.js"	
+        ]	
     },
     {
         "name": "Spotify Api JS",
