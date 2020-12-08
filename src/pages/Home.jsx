@@ -9,11 +9,6 @@ const match = (a, b) => {
 
 class Home extends React.Component{
 
-    componentDidMount(){
-        window.darkMode = true;
-        window.dark();
-    };
-
     render(){
         let data = this.props.data;
         let history = localStorage.getItem('history');

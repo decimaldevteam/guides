@@ -17,6 +17,7 @@ window.dark = () => {
         setStyle('--dark-color', 'white');
         setStyle('--blockquote-color', '#6a737d');
         setStyle('--paginator-link-color', '#16161d');
+        setStyle('--grey-color', '#303030')
 
         document.querySelector('.header-branding img').src = '/assets/favicon.png';
         
@@ -31,6 +32,7 @@ window.dark = () => {
         setStyle('--dark-color', 'black');
         setStyle('--blockquote-color', '#dadde1');
         setStyle('--paginator-link-color', '#dadde1');
+        setStyle('--grey-color', ' #fcfcfc');
 
         document.querySelector('.header-branding img').src = '/assets/white-favicon.png';
     }
@@ -52,6 +54,8 @@ export default function(){
                 <a href="/#/">Home</a>
                 <a href="/#/guides">Guides</a>
                 <a href="/#/history">History</a>
+                <a href="/#/new">New</a>
+                <a href="/#/submissions">Submissions</a>
 
                 <label class="switch">
                     <input type="checkbox"/>

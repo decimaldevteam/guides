@@ -19,11 +19,6 @@ class GuideSearch extends React.Component{
         this.state = { content: this.history.map(x => <GuideCard guide={x}/>) };
     };
 
-    componentDidMount(){
-        window.darkMode = true;
-        window.dark();
-    };
-
     render(){
         const search = () => {
             let q = document.getElementById('search-box').value;

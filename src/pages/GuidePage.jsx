@@ -84,11 +84,6 @@ class GuidePage extends React.Component{
         window.removeEventListener('resize', sidebar);
     };
 
-    componentDidMount(){
-        window.darkMode = true;
-        window.dark();
-    };
-
     render(){
         return <>
             <Header/>
@@ -103,7 +98,8 @@ class GuidePage extends React.Component{
                 <div id="paginator"/><hr/>
                 <font className="credits">Written by <font id="writter">404</font></font><br/>
                 <font className="muted">Last updated at {this.guide.updated}</font><br/>
-                <a className="edit-btn" href={`https://github.com/decimaldevteam/guides/blob/main/public/guides/${this.guide.file}.md`}>Edit this guide <i class="fas fa-edit"></i></a>
+                <a className="edit-btn" href={`/#/new/${this.guide.file}`}>Edit this Guide <i class="fas fa-edit"></i></a><br/>
+                <a className="edit-btn" href={`https://github.com/decimaldevteam/guides/blob/main/public/guides/${this.guide.file}.md`}>Edit on GitHub <i class="fas fa-edit"></i></a>
                 <div style={{ height: '90px' }}/>
             </div>
 

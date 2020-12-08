@@ -9,6 +9,7 @@
     --card-color: #fff;
     --blockquote-color: #dadde1;
     --paginator-link-color: #dadde1;
+    --grey-color: #eeebeb;
 }
 
 *, :after, :before{
@@ -229,7 +230,7 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
 }
 
-.coverpage input{
+.coverpage input, .entry-box input, .entry-box textarea{
     outline: none;
     margin-top: 20px;
     padding: .9rem;
@@ -492,13 +493,27 @@ input:checked + .slider:before {
     }
 }
 
-@media (max-width: 500px){
+@media (max-width: 680px){
+    .switch{
+        position: relative;
+        left: 30px;
+        top: 15px;
+    }
+
     .header-branding font{
         display: none;
     }
 
     .header-content a {
         padding-left: 10px;
+    }
+
+    .header-content{
+        overflow-y: auto;
+    }
+
+    .slider{
+        width: 60px;
     }
 }
 
@@ -601,4 +616,81 @@ input:checked + .slider:before {
 #vl-btn{
     font-weight: lighter;
     font-size: 14px;
+}
+
+.entry-box h3, .entry-box > p{
+    font-weight: bolder;
+}
+
+.entry-box > p{
+    color: red;
+    display: none;
+}
+
+.entry-box input, .entry-box textarea{
+    box-shadow: 0 1px 5px grey;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.entry-box textarea{
+    height: 300px;
+    font-family: var(--guide-font);
+}
+
+.output-page-box{
+    background-color: var(--grey-color);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.entry-box > h1{
+    font-weight: bolder;
+}
+
+.entry-box a{
+    cursor: pointer;
+}
+
+.submit{
+    text-align: center;
+}
+
+.submit a{
+    margin: 0;
+    background: rgb(255, 52, 52);
+    padding: 5px;
+    width: 100%;
+    display: inline-block;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.submission-card, .submission-demo{
+    background-color: var(--grey-color);
+    padding: 20px;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+.submission-card a{
+    cursor: pointer;
+}
+
+.submission-card h1{
+    margin: 0;
+    margin-bottom: -15px;
+}
+
+.submission-card strong{
+    font-family: var(--guide-font);
+    margin-top: -10px!important;
+    display: inline-block;
 }

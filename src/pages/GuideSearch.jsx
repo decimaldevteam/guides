@@ -10,11 +10,6 @@ class GuideSearch extends React.Component{
         this.state = { content: this.props.data.map(x => <GuideCard guide={x}/>) };
     };
 
-    componentDidMount(){
-        window.darkMode = true;
-        window.dark();
-    };
-
     render(){
 
         const search = () => {
@@ -52,6 +47,7 @@ class GuideSearch extends React.Component{
                 <div className="row">{this.state.content}</div>
             </div>
         </>
+
     };
 
 };
