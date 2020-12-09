@@ -1,10 +1,12 @@
 # Add your guide
 
-Add your guide to our guides website! This will take you some few minutes and the steps and conditions are in the next pages!
+Add your own guide to our guide pages through github, you can even do it with the website itself with github login in [new](https://guides.decimaldev.xyz/#/new)! Read the conditions in the page 3 and in case if you want to submit the site through github then read page 2 of steps to do
 
 ---
 
 # Steps
+
+Steps to submit the guide through github
 
 ## GitHub Login
 
