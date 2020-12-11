@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
 }
 
-.header::-webkit-scrollbar { 
+.header::-webkit-scrollbar, .dup-header::-webkit-scrollbar { 
     width: 0;
 } 
 
@@ -693,4 +693,150 @@ input:checked + .slider:before {
     font-family: var(--guide-font);
     margin-top: -10px!important;
     display: inline-block;
+}
+
+.output-page-box{
+    overflow: auto;
+}
+
+.signin, .signout{
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgb(255, 79, 79);
+    color: white;
+    width: 40%;
+    display: inline-block;
+}
+
+.signin-box{
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.account-info{
+    text-align: center;
+}
+
+.account-info img{
+    border-radius: 100%;
+    width: 250;
+    height: 250;
+}
+
+.signout{
+    margin-top: 10px;
+}
+
+.discussion{
+    display: flex;
+    width: 100%;
+    font-family: var(--guide-font);
+    margin-top: 15px;
+}
+
+.discussion img{
+    border-radius: 100%;
+    height: 50;
+    width: 50;
+    border: .5px solid var(--grey-color);
+}
+
+.d-side{
+    margin-left: 20px;
+    width: 100%;
+}
+
+.d-content{
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    height: 80px;
+    border: 1px solid var(--blockquote-color);
+    border-top: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.d-timestamp-handler{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 35px;
+    background-color: var(--grey-color);
+    border: 1px solid var(--blockquote-color);
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.d-timestamp-handler p{
+    margin: 0;
+    padding: 0;
+}
+
+.d-name{
+    font-weight: bolder;
+}
+
+.d-timestamp{
+    font-weight: lighter;
+    font-size: 13px;
+}
+
+.d-content{
+    padding: 5px;
+}
+
+.d-content, .d-timestamp-handler{
+    padding-left: 8px;
+}
+
+.new-discussion textarea{
+    border: none;
+    padding: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    resize: none;
+    font-family: var(--guide-font);
+}
+
+.d-send{
+    margin-top: 15px;
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 3px;
+    background-color: rgb(255, 79, 79);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.d-delete-btn{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.d-delete-btn:hover{
+    opacity: 0.7;
+}
+
+.svg-link{
+    font-size: 23px;
+}
+
+.d-nosignin{
+    text-decoration: none;
+    text-align: center;
+}
+
+.d-nosignin a{
+    padding: 3px;
+    text-decoration: none;
+    margin-top: -10px;
 }

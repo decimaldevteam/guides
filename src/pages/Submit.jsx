@@ -61,21 +61,32 @@ export default class SubmitPage extends React.Component{
             if(data.content.length < 100) return alert(`The content field should be ${100 - data.content.length} characters more lengthier!`)
 
             let alertError = () => alert('Login fialed!');
+            let token = localStorage.getItem('token');
 
-            let loginPopup = LoginWindow.open('https://github.com/login/oauth/authorize?client_id=bf6ad8be3bf4e20026bf&redirect_uri=' + decodeURIComponent(`${window.location.origin}/login.html`), 'GitHub Authorization', 'height=100&width=600');
-            loginPopup.promise
-            .then(
-                code => {
-                    fetch(`https://api.decimaldev.xyz/guidelogin?code=${code}`)
-                    .then(res => res.json(), alertError)
-                    .then(user => {
-                        data.author = user.data;
-                        fetch(`https://api.decimaldev.xyz/sendwhmessage`, { headers: { data: JSON.stringify(data) } });
-                        alert('Guide has been submitted! It will take upto 1 to 5 days for the team to review the guide and apply it! Else you can try to make a github pull request too!');
-                    }, alertError)
-                },
-                () => alert('Login failed!')
-            )
+            if(token){
+                data.author = token;
+                fetch(`https://api.decimaldev.xyz/submitguide`, { headers: { data: JSON.stringify(data) } })
+                .then(res => res.status, submitByLogin)
+                .then(() => alert('Guide has been submitted! It will take upto 1 to 5 days for the team to review the guide and apply it! Else you can try to make a github pull request too!'), submitByLogin)
+            }
+            else submitByLogin();
+
+            function submitByLogin(){
+                let loginPopup = LoginWindow.open('https://github.com/login/oauth/authorize?client_id=bf6ad8be3bf4e20026bf&redirect_uri=' + decodeURIComponent(`${window.location.origin}/login.html`), 'GitHub Authorization', 'height=100&width=600');
+                loginPopup.promise.then(
+                    code => {
+                        fetch(`https://api.decimaldev.xyz/guidelogin?code=${code}`)
+                        .then(res => res.json(), alertError)
+                        .then(user => {
+                            data.author = user.data;
+                            localStorage.setItem('token', data.author);
+                            fetch(`https://api.decimaldev.xyz/submitguide`, { headers: { data: JSON.stringify(data) } });
+                            alert('Guide has been submitted! It will take upto 1 to 5 days for the team to review the guide and apply it! Else you can try to make a github pull request too!');
+                        }, alertError)
+                    },
+                    () => alert('Login failed!')
+                )
+            };
         };
 
         return <>

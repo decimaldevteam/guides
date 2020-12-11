@@ -7,6 +7,8 @@ import GuidePage from './pages/GuidePage';
 import HistoryPage from './pages/History';
 import SubmitPage from './pages/Submit';
 import SubmissionPage from './pages/Submissions';
+import AccountsPage from './pages/Account';
+import Discussions from './pages/Discussions';
 
 class App extends React.Component{
 
@@ -41,6 +43,8 @@ class App extends React.Component{
                     else if(route === '/history') return <HistoryPage data={this.state.data}/>;
                     else if(route === '/submissions') return <SubmissionPage/>;
                     else if(route.startsWith('/new')) return <SubmitPage data={this.state.data} route={route.split('/')}/>;
+                    else if(route === '/discussion') return <Discussions/>;
+                    else if(route === '/account') return <AccountsPage/>;
                     else return <Home data={this.state.data}/>;
                 }}/>
             </HashRouter>

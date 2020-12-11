@@ -56,6 +56,8 @@ export default function(){
                 <a href="/#/history">History</a>
                 <a href="/#/new">New</a>
                 <a href="/#/submissions">Submissions</a>
+                <a href="/#/discussion">Discussion</a>
+                <a href="/#/account">Accounts</a>
 
                 <label class="switch">
                     <input type="checkbox"/>

@@ -15,6 +15,10 @@ export default class Popup{
                     if(code){
                         this.close();
                         resolve(code);
+                    }
+                    else if(queries.get('error')){
+                        this.close();
+                        reject();
                     };
                 }catch(e){};
             }, 500)
