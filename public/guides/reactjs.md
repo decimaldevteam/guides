@@ -110,3 +110,127 @@ ReactDOM.render(<App/>, document.getElementById('app'));
 ```
 
 And when doing npm start you can see a loading page, you can do things with the content you getting from api!
+
+---
+
+# GitHub Login
+
+GitHub login is used to know that which github user is accessing the website. This will help to collect data based on that. Even this website uses github login for things like discussion page, submissions, etc! There are currently many social logins avaliable like google, discord, facebook but for this guide we will be useing github as an example!
+
+Make sure you make an oauth app by going to Settings > Developer Settings > Oauth Apps > New App. Then get your client secret and id.
+
+> Put your homepage and callback url correctly in the box
+
+## App
+
+Now just simply make the main app class
+
+```js
+import React from 'react';
+
+const CLIENT_ID = ''; // Your client id
+
+class App extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = { content: <font>We are making a login!</font> };
+    }
+
+    componentDidMount(){
+        let popup = window.open(
+            'https://github.com/login/oauth/authorize?client_id=' + CLIENT_ID + '&redirect_uri=' + encodeURIComponent(`${window.location.origin}/login.html`), // Just create a login.html file in public folder to get the code from the github api
+            'GitHub Authorization', 
+            'height=100&width=600' // For a minimized window
+        );
+
+        let interval = window.setInterval(() => {
+            let queries = new URLSearchParams(popup.location.search);
+            let code = queries.get('code');
+
+            if(code){
+                window.clearInterval(interval);
+                popup.close();
+                return this.proceed(code);
+            }
+
+            if(queries.get('error')){
+                window.clearInterval(interval);
+                popup.close();
+                return alert('Login Failed');
+            }
+        }, 1000)
+    }
+
+    proceed(code){
+        fetch('localhost:5000/login', { headers: { code } }) // localhost:5000 is ur api site!
+        .then(res => res.json())
+        .then(user => {
+            this.setState({ content: <h1>Hi {user.login}!</h1> })
+        })
+    }
+    
+    render(){
+        return <>
+            {this.state.content}
+        </>
+    }
+
+}
+```
+
+For this tutorial we will be using an api to secure our client secret! So we will be using expressjs in a seperate site!
+
+## Api
+
+Now because we will be using client so this will be a private api and will be using `dotenv` and expressjs's `req.headers.origin` to only allow the main site to access api!
+
+```js
+const express = require('express');
+const axios = require('axios');
+const app = express();
+const origin = 'http://localhost:3000';
+
+app.get('/login', async (req, res) => {
+    if(!req.headers.origin != origin) return res.status(401).json({ message : 'Unauthorized' }); // To prevent others to access
+
+    let code = req.headers.code;
+
+    try{
+        const { data } = await axios({
+            method: 'POST',
+            url: `https://github.com/login/oauth/access_token?client_id=${process.env.client_id}&client_secret=${process.env.client_secret}&code=${code}&redirect_uri=${encodeURIComponent(`${origin}/login.html`)}`
+        });
+
+        let token = data.split('=')[1].split('&')[0];
+
+        const user = await axios({
+            method: 'GET',
+            url: 'https://api.github.com/user',
+            headers: {
+                Authorization: `token ${token}`
+            }
+        });
+
+        return res.status(200).json(user.data);
+    }catch(e){
+        return res.status(400).json({ message: 'Failed' });
+    }
+});
+
+app.listen(5000);
+```
+
+## Rendering
+
+Now render with react-dom
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App/>, document.getElementById('app'));
+```
+
+And now go to `localhost:3000` and see the magic! You can join our discord support server [here](https://discord.gg/FrduEZd) for help!
