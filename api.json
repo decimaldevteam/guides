@@ -9,6 +9,9 @@
             "Express.js",
             "Node.js",
             "Website"
+        ],
+        "guides": [
+            { "name": "Introduction", "YouTube": "https://www.youtube.com/watch?v=lvuBUh09wsI" }
         ]
     }
 ]
