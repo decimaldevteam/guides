@@ -10,7 +10,7 @@
             "Node.js",
             "Website"
         ],
-        "guides": [
+        "pages": [
             { "name": "Introduction", "youtube": "https://www.youtube.com/watch?v=lvuBUh09wsI" }
         ]
     }
