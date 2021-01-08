@@ -11,7 +11,7 @@
             "Website"
         ],
         "guides": [
-            { "name": "Introduction", "YouTube": "https://www.youtube.com/watch?v=lvuBUh09wsI" }
+            { "name": "Introduction", "youtube": "https://www.youtube.com/watch?v=lvuBUh09wsI" }
         ]
     }
 ]
