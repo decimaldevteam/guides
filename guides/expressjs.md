@@ -1,6 +1,6 @@
 # Introduction
 
-Express.js is a server side web framework for node.js which is very easy to use and learn!
+This page is a written blog of our youtube video [here](https://www.youtube.com/watch?v=lvuBUh09wsI)! You can view the whole source code of the whole guide in the github [here](https://github.com/decimaldevteam/tutorials/tree/express.js-ep-1)! You will see how to setup express.js and some examples to make an api with it in this page!
 
 ## Setting up
 
