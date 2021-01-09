@@ -2,7 +2,7 @@
     {
         "name": "Express.js",
         "description": "Express.js is a server side web framework for node.js which is very easy to use and learn!",
-        "youtube": "https://www.youtube.com/watch?v=lvuBUh09wsI",
+        "youtube": "lvuBUh09wsI",
         "file": "expressjs",
         "thumbnail": "https://i.imgur.com/ibsu2Im.png",
         "tags": [
@@ -11,7 +11,7 @@
             "Website"
         ],
         "pages": [
-            { "name": "Introduction", "youtube": "https://www.youtube.com/watch?v=lvuBUh09wsI" }
+            { "name": "Introduction", "youtube": "lvuBUh09wsI" }
         ]
     }
 ]
