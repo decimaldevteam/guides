@@ -1,19 +1,7 @@
 # Decimal Guides
 
-A guides site made by decimal development! It currently has 4 guides with 2 contributors!
+A very basic and simple blog site for written documentation of youtube videos! You can view my channel [here](https://www.youtube.com/channel/UCu6B4Z62fiCT_mwwHlc84iQ)! Originally this website had some useless things, so i removed them and used next.js for backend and cache guides and its information! You can view this website [here](https://guides.decimaldev.xyz)! You can contribute this guides by putting the file in `guides/` folder!
 
 ## Discord Server 
 
 Join our discord from [here](https://discord.gg/FrduEZd)
-
-## Features
-
-- History tab
-- Recommends guide
-- Search guides and much more
-
-> The site is made with react for developers by developers!
-
-**Want to be a contributor?**
-
-You can make us a guide by following steps from [here](https://guides.decimaldev.xyz/#/guide/add-your-guide)
