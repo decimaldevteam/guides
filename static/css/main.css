@@ -145,14 +145,16 @@ h1, h2, h3, h4, h5, h6 {
     width: calc(100% - 100px);
 }
 
-.row{
-    display: flex;
-    flex-wrap: nowrap;
-}
+@media (min-width: 1038px){
+    .row{
+        display: flex;
+        flex-wrap: nowrap;
+    }
 
-.guide{
-    flex: 0 0 20%;
-    max-width: 20%;
+    .guide{
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
 }
 
 .guide{
@@ -229,9 +231,8 @@ h1, h2, h3, h4, h5, h6 {
     white-space: pre-wrap;
 }
 
-.nav i{
-    width: .875em;
-    font-size: 2em;
+.nav svg{
+    width: 1.8em;
     cursor: pointer;
 }
 
@@ -392,8 +393,9 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 20px;
 }
 
-.page-mover i{
+.page-mover svg{
     font-size: 2em;
+    width: .55em;
 }
 
 .page-mover .pi{
