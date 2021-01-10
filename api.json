@@ -11,7 +11,8 @@
             "Website"
         ],
         "pages": [
-            { "name": "Introduction", "youtube": "lvuBUh09wsI" }
+            { "name": "Introduction", "youtube": "lvuBUh09wsI" },
+            { "name": "GitHub Login", "youtube": null }
         ]
     }
 ]
