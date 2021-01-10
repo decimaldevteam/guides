@@ -1,0 +1,11 @@
+# Modules
+node_modules/
+package-lock.json
+
+# Build files
+.next/
+
+# Overlapping files
+api.json
+guides/
+README.md
