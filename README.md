@@ -17,3 +17,4 @@ Join our discord from [here](https://discord.gg/FrduEZd)
 **Want to be a contributor?**
 
 You can make us a guide by following steps from [here](https://guides.decimaldev.xyz/#/guide/add-your-guide)
+ 
