@@ -205,6 +205,171 @@ These are just some few examples. I will extend this guide to more pages. To sup
 
 ---
 
-# Upcomming
+# Github login
 
-This guide and the video tutorial is on progress!
+You might have login system in the 90% of internet which is very essential which helps the website to know who are you and provide services to you! And we will be doing the same login with express.js and we will be using github's oauth for this guide! You can view the source code of this project [here](https://github.com/decimaldevteam/tutorials/tree/express.js-ep-2)!
+
+## Setting up
+
+So first setup npm and install packages
+
+```sh
+npm init -y
+npm i express axios dotenv
+```
+
+Your file structure should look like this!
+
+```
+|- node_modules/
+|- index.js
+|- .env
+|- package-lock.json
+|- package.json
+```
+
+## Dotenv
+
+Now got your `.env` file!
+
+```
+PORT = 3000
+```
+
+We will be storing port in env file to test is that env works! Then go to your `index.js` and add this line of code which loads the env variables!
+
+```js
+require('dotenv').config(); // Loads all env variables
+```
+
+## Web app
+
+If you have not viewed the previous page, then view it to know how to setup web app with express.js. Here is the basic web app code with a test json response!
+
+```js
+const express = require('express');
+const app = express();
+
+// Simple test response
+app.get('/', (req, res) => {
+    res.status(200).json({ message: 'OK' });
+});
+
+app.listen(process.env.PORT, () => {
+    console.log('Listening on port 3000!');
+});
+```
+
+You can run the index.js file by `node index` and see if it's working perfectly at `http://localhost:3000`!
+
+## Creating an oauth app
+
+Now to perform github login with express.js we need to create our oauth app by going to `github.com`! Click your avatar which is at top right side. A dropdown menu will come and click settings there. In settings, scroll below and find for Developer Settings and click it! After going there click Oauth Apps and click create new app if you have not created! Fill the details over there correctly or errors will occur during login process! You can view out youtube video for more clear understanding what you are doing! The homepage url in the form will be the url where you will be redirected to login and the callback url will be the url which will be redirected after login process with code search query! The url should be exactly same too... After creating an oauth app, copy the client id and client secret to `.env` file!
+
+```
+PORT = 3000
+CLIENT_ID = someid
+CLIENT_SECRET = somesecret
+```
+
+## Redirecting to login page!
+
+Now lets create a callback function for `/login` path which is provided in the form!
+
+```js
+// Login page
+app.get('/login', (req, res) => {
+    res.redirect(`https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}&redirect_uri=${encodeURIComponent(`http://localhost:${process.env.PORT}/callback`)}`);
+});
+```
+
+Incase if you are confused what is going on here then lemme explain it. When the user visits the `/login` page it gets redirected to the url provided in the `res.redirect` method! The url which is getting to be redirected will contain some information in search queries such as `client_id` which will be the client if from the `.env` file, `redirect_uri` which will be the encoded url which will be redirected after login ends with a code search query!<br/><br/>Now you can go and visit `http://localhost:3000` where you will be redirected to github login and then sent to `/callback` with code search query which will not send response because we didnt written the callback for the `/callback` path!
+
+## Callback path
+
+```js
+// Callback page
+app.get('/callback', async (req, res) => {
+    let code = req.query.code;
+    if(!code) return res.status(400).json({ message: 'no code provided!' });
+
+    try{
+        const token = await axios({
+            method: 'POST',
+            url: `https://github.com/login/oauth/access_token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&code=${code}&redirect_uri=${encodeURIComponent('http://localhost:3000/callback')}`,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        const user = await axios({
+            method: 'GET',
+            url: `https://api.github.com/user`,
+            headers: {
+                Authorization: `token ${token.data.access_token}`
+            }
+        });
+
+        res.status(200).json({ message: 'success', data: user.data });
+        console.log(`${user.data.login} has logged in at ${Date.now()}`);
+    }catch(e){
+        console.log(e);
+        res.status(500).json({ message: 'internal server error!' });
+    }
+})
+```
+
+Ok, couldn't understand anything? Lemme breakdown codes!
+
+```js
+let code = req.query.code;
+if(!code) return res.status(400).json({ message: 'no code provided!' });
+```
+
+This code searches if there is any code search query provided. If none will send 400 bad request response!
+
+```js
+}catch(e){
+    console.log(e);
+    res.status(500).json({ message: 'internal server error!' });
+}
+```
+
+Then there is a try catch block. Incase if there is any kind of error in the rest of the code it will send 500 Internal server error as response and console the error for debugging!
+
+```js
+const token = await axios({
+    method: 'POST',
+    url: `https://github.com/login/oauth/access_token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&code=${code}&redirect_uri=${encodeURIComponent('http://localhost:3000/callback')}`,
+    headers: {
+        'Accept': 'application/json'
+    }
+});
+```
+
+Ok here as you can see using the code we are getting the access token by making post request using axios! `client_id`, `client_secret`, `code` and `redirect_uri` are sent as query parameters! The redirect uri needs to be same which you have proivided in the login url! Then we use the `Accept` header to receive json response because the api by default sends a search query format response which is not required for us so we need a json response!
+
+```js
+const user = await axios({
+    method: 'GET',
+    url: `https://api.github.com/user`,
+    headers: {
+        Authorization: `token ${token.data.access_token}`
+    }
+});
+```
+
+In this code, we are getting the user's public info using the access token sent by the github api first! In the headers we provide `Authorization` header where it contains the token.
+
+> If you are confused why `token.data.access_token`. Axios sends it's response in a object where the response data will be in data and the access_token is the json response sent by github api!
+
+```js
+res.status(200).json({ message: 'success', data: user.data });
+console.log(`${user.data.login} has logged in at ${Date.now()}`);
+```
+
+Easily understandable that we are sending the response and console logging that someone has performed login through our site! Now you can test this, and see a successful console log message. View the youtube video for live examples!
+
+## Conclusion
+
+Now you can store the user information in cookies if it's backend or local storage with jwt if it's frontend! That's all for today's guide. In upcomming pages, we will discuss more about express.js!
