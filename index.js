@@ -5,7 +5,7 @@ const handle = next.getRequestHandler();
 
 next.prepare().then(() => {
 
-    app.use('/api', require('./api'));
+    app.use('/api', require('./routes/api'));
 
     app.get('*', (req, res) => {
         handle(req, res);
