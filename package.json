@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "next",
+    "dev": "node index dev",
     "build": "next build",
-    "start": "next start",
-    "deploy": "next build && next start"
+    "start": "node index",
+    "deploy": "next build && next index"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "express": "^4.17.1",
     "next": "^10.0.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
